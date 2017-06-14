@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="BioShock_cover" size="5.000000 6.289308" />
+    <ImageTarget name="image" size="5.000000 7.500000" />
+    <ImageTarget name="Just_Dance_2_Coverart" size="5.000000 7.031250" />
+    <ImageTarget name="Sonic_and_the_Secret_Rings_coverart" size="5.000000 7.011719" />
+    <ImageTarget name="WiiPlay" size="5.000000 7.031250" />
+    <ImageTarget name="streetFighterVTekken" size="5.000000 6.200000" />
+  </Tracking>
+</QCARConfig>
