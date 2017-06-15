@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="385841-2dark-limited-edition-windows-front-cover" size="5.000000 6.312500" />
+    <ImageTarget name="kungfuHighImpact" size="5.000000 7.116279" />
     <ImageTarget name="BioShock_cover" size="5.000000 6.289308" />
     <ImageTarget name="image" size="5.000000 7.500000" />
     <ImageTarget name="Just_Dance_2_Coverart" size="5.000000 7.031250" />

@@ -4,6 +4,7 @@ using UnityEngine;
 using Vuforia;
 using UnityEngine.UI;
 using System.Timers; 
+using UnityEngine.Video; 
 
 
 public class goToSite : MonoBehaviour, ITrackableEventHandler {
@@ -11,8 +12,14 @@ public class goToSite : MonoBehaviour, ITrackableEventHandler {
 	//initializing image title
 	public UnityEngine.UI.Image imageTitle; 
 
+	public string url = ""; 
+	//audio source
+
+
+
+	public UnityEngine.Video.VideoPlayer videoPlayer ; 
+
 	// The image showing the title of the game
-	public Sprite imageName; 
 
 	//the particle system that shows when you click the image
 	public ParticleSystem myParticleSystem; 
@@ -31,6 +38,9 @@ public class goToSite : MonoBehaviour, ITrackableEventHandler {
     void Start()
     {
 
+		
+
+
     	myParticleSystem.Stop(); 
     	imageTitle.enabled = false;
         mTrackableBehaviour = GetComponent<TrackableBehaviour>();
@@ -40,6 +50,16 @@ public class goToSite : MonoBehaviour, ITrackableEventHandler {
         }
     }
 
+    IEnumerator addImg(){
+
+		WWW www = new WWW(url);
+        yield return www;
+        imageTitle.sprite = Sprite.Create(www.texture, new Rect(0, 0, www.texture.width, www.texture.height), new Vector2(0, 0));
+
+    }
+
+  
+   
 
     //url on click 
 
@@ -70,32 +90,33 @@ public class goToSite : MonoBehaviour, ITrackableEventHandler {
 		if (newStatus == TrackableBehaviour.Status.DETECTED ||
 		    newStatus == TrackableBehaviour.Status.TRACKED ||
 		    newStatus == TrackableBehaviour.Status.EXTENDED_TRACKED) {
+		    videoPlayer.enabled = true; 
+			videoPlayer.Play ();
 
-		    // "gameDetails" takes a trackable name , a bool that checks if the title is enabled, the sprite image variable that is attached in the unity interface, and the rating
+			StartCoroutine(addImg());
+			// "gameDetails" takes a trackable name , a bool that checks if the title is enabled, the sprite image variable that is attached in the unity interface, and the rating
 
-			gameDetails("Just_Dance_2_Coverart", true, imageName, "7.4 Pretty Good");
-			gameDetails("Sonic_and_the_Secret_Rings_coverart", true, imageName, "5.5 Mediocre");
-			gameDetails("WiiPlay", true, imageName, "6 It's Okay");
-			gameDetails("streetFighterVTekken", true, imageName, "9 Awesome!");
-			gameDetails("image", true, imageName, "8.4 Great!");
-			gameDetails("BioShock_cover", true, imageName, "9.6 Amazing!");
+			gameDetails ("Just_Dance_2_Coverart", true, "7.4 Pretty Good");
+			gameDetails ("Sonic_and_the_Secret_Rings_coverart", true, "5.5 Mediocre");
+			gameDetails ("WiiPlay", true, "6 It's Okay");
+			gameDetails ("streetFighterVTekken", true, "9 Awesome!");
+			gameDetails ("image", true, "8.4 Great!");
+			gameDetails ("BioShock_cover", true, "9.6 Amazing!");
 
 
 
 
-        }
+		}
         // if the tracking is lost reset 
-        else
-        {
+        else {
+			if (videoPlayer.enabled = true) {
+				videoPlayer.Pause ();
+			}
 			ratingOfGame.text = "";
 			trackableName = "";
 			myParticleSystem.Stop();
         }
     } 
-
-
-
-
 
 
 
@@ -108,12 +129,11 @@ public class goToSite : MonoBehaviour, ITrackableEventHandler {
 			}
     }
 
-	public void gameDetails( string nameOfTrackable, bool isTitleEnabled, Sprite imageSprite, string rating ){
+	public void gameDetails( string nameOfTrackable, bool isTitleEnabled, string rating ){
 
 		if (mTrackableBehaviour.Trackable.Name == nameOfTrackable) {
 
 				imageTitle.enabled = isTitleEnabled; 
-				imageTitle.sprite = imageSprite; 
 				ratingOfGame.text = rating;
 				trackableName = nameOfTrackable;
 
