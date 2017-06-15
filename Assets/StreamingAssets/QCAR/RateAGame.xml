@@ -1,8 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
   <Tracking>
+    <ImageTarget name="crashBandicootSaneTrilogy" size="5.000000 6.316667" />
+    <ImageTarget name="assasinsCreeedTheEzioCollection" size="5.000000 6.224066" />
+    <ImageTarget name="assasinsCreedSyndacate" size="5.000000 6.270534" />
+    <ImageTarget name="assasinsCreedBlackFlag" size="5.000000 7.031250" />
+    <ImageTarget name="arsianTheWarriorsOfLegend" size="5.000000 6.233333" />
+    <ImageTarget name="armaGallentDecksOfDestiny" size="5.000000 5.000000" />
+    <ImageTarget name="arkSurvival" size="5.000000 7.500000" />
+    <ImageTarget name="arcaniaTheCompleteTale" size="5.000000 6.250000" />
+    <ImageTarget name="Alien_Isolation" size="5.000000 5.760000" />
+    <ImageTarget name="alkehinesGun" size="5.000000 6.761658" />
+    <ImageTarget name="akibas-trip-2_6szz" size="5.000000 6.353333" />
+    <ImageTarget name="AkibasBeat" size="5.000000 5.566406" />
+    <ImageTarget name="airConflictsVietnameWar" size="5.000000 6.233333" />
+    <ImageTarget name="airConflictsSecretWars" size="5.000000 5.777778" />
+    <ImageTarget name="airConflictsPacificCarriers" size="5.000000 6.232558" />
+    <ImageTarget name="airConflictsDoublePack" size="5.000000 6.237006" />
+    <ImageTarget name="AgathaChristieAbcMurders" size="5.000000 6.295907" />
+    <ImageTarget name="aegisOfEarthProtonovusAssault" size="5.000000 6.377551" />
+    <ImageTarget name="AdventureTimeFinnAndJakeInvestigations" size="5.000000 6.441667" />
+    <ImageTarget name="AdamsVentureOrigins" size="5.000000 5.000000" />
+    <ImageTarget name="7WaysToDie" size="5.000000 6.487759" />
     <ImageTarget name="385841-2dark-limited-edition-windows-front-cover" size="5.000000 6.312500" />
-    <ImageTarget name="kungfuHighImpact" size="5.000000 7.116279" />
     <ImageTarget name="BioShock_cover" size="5.000000 6.289308" />
     <ImageTarget name="image" size="5.000000 7.500000" />
     <ImageTarget name="Just_Dance_2_Coverart" size="5.000000 7.031250" />
